@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import CantidadPokemonHook from './components/CantidadPokemonHook';
 import ComprarPokemonHook from './components/ComprarPokemonHook';
+import BuscadorPokemon from './components/buscador/BuscadorPokemon';
+import ResultadoPokemon from './components/buscador/ResultadoPokemon';
 // Provider es un componente que envuelve toda la aplicación y brinda la posibilidad
 // de conectarse al store
 
@@ -42,12 +44,15 @@ function App() {
                     <ComprarPokemonHook/>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
-
+          <div className='col-12 mt-4 border-top pt-3'>
+            <BuscadorPokemon/>
+          </div>
+          <div className='col-12'>
+            <ResultadoPokemon/>
+          </div>
         </div>
       </div>
     </Provider>
