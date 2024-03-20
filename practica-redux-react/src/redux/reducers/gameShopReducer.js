@@ -2,7 +2,7 @@
 
 import { BUY_POKEMON, RETURN_POKEMON } from "../actions/gameShopAction";
 
-const default_game_shop = { pokemon: 30 };
+const default_game_shop = { pokemon: 12 };
 
 const game_shop = (state = default_game_shop, action) => {
     switch (action.type) {

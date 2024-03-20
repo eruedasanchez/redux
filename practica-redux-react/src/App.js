@@ -1,13 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import CantidadPokemon from './components/CantidadPokemon';
-import ComprarPokemon from './components/ComprarPokemon';
+// import CantidadPokemon from './components/CantidadPokemon';
+// import ComprarPokemon from './components/ComprarPokemon';
 // import store from './redux/store';
 
 // CAPITULO 11. Conectando Redux a React
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import CantidadPokemonHook from './components/CantidadPokemonHook';
+import ComprarPokemonHook from './components/ComprarPokemonHook';
 // Provider es un componente que envuelve toda la aplicación y brinda la posibilidad
 // de conectarse al store
 
@@ -33,9 +35,11 @@ function App() {
                 <div className='col-8'>
                   <div className='card-body'>
                     <div className='card-title h3 text-center'>
-                      <CantidadPokemon/>
+                      {/* <CantidadPokemon/> */}
+                      <CantidadPokemonHook/>
                     </div>
-                    <ComprarPokemon/>
+                    {/* <ComprarPokemon/> */}
+                    <ComprarPokemonHook/>
                   </div>
                 </div>
 
