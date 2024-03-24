@@ -1,0 +1,1 @@
+Comenzamos creando la carpeta redux donde vamos a almacenar nuestro estado global
