@@ -53,6 +53,22 @@ Con esto, va a llegar a reducer y el reducer por medio del `switch case` va a sa
 
 ![React-Redux--Tutorial](https://i.postimg.cc/Fs9wPvgj/react-redux-tutorial-1.jpg "Creación del Store y Reducers")
 
+### Creación del Action y Dispatch
+
+Ya tenemos creado el *dispatch*. Por lo tanto, ahora vamos a crear el *action* para enviarla al *dispatch*.
+Llamamos a la acción `buy_pokemon_action`.
+
+Por lo tanto, cuando enviemos la acción, lo va a enviar al store y se lo va a pasar a su trabajador o reducer.
+
+Por lo tanto, en la función `games_reducer` en el *case* donde la acción sea igual a `BUY_POKEMON` y vamos a reducir la cantidad de pokemones de acuerdo al valor de `cant`.
+
+Finalmente, envio la acción al dispatch, o sea, en `store.dispatch(buy_pokemon_action)` con la cantidad de productos que quiero comprar. En nuestro caso, la cantidad es 3.
+
+Y cuando ejecutamos node app.js, observamos que ahora si se produce un cambio de estado.
+
+![React-Redux--Tutorial](https://i.postimg.cc/RVd6HDtZ/react-redux-tutorial-2.jpg "Creación del Action y Dispatch")
+
+
 
 
 
