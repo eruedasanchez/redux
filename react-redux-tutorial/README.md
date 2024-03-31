@@ -68,7 +68,13 @@ Y cuando ejecutamos node app.js, observamos que ahora si se produce un cambio de
 
 ![React-Redux--Tutorial](https://i.postimg.cc/RVd6HDtZ/react-redux-tutorial-2.jpg "Creación del Action y Dispatch")
 
+### Multiples acciones
 
+Ahora, queremos devolver el pokemon que hemos comprado. Para ello, nombramos el tipo de acción como `RETURN_POKEMON` y llamamos a la acción como `return_pokemon_action`.
+
+La agregamos a los casos de la función `games_reducer` y disparamos la acción ejeción en `store.dispatch(return_pokemon_action(2));`
+
+![React-Redux--Tutorial](https://i.postimg.cc/vmBt38N1/react-redux-tutorial-3.jpg "Multiples acciones")
 
 
 

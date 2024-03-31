@@ -10,6 +10,14 @@ const buy_pokemon_action = cant => {
     }
 }
 
+const RETURN_POKEMON = 'RETURN_POKEMON';
+const return_pokemon_action = cant => {
+    return {
+        type: RETURN_POKEMON,
+        payload: cant
+    }
+}
+
 /********** REDUCERS ***********/
 
 const default_games_state = { pokemon: 10 };
@@ -19,6 +27,11 @@ const games_reducer = (state = default_games_state, action) => {
         case BUY_POKEMON: {
             return {
                 pokemon: state.pokemon - action.payload
+            }
+        }
+        case RETURN_POKEMON: {
+            return {
+                pokemon: state.pokemon + action.payload
             }
         }
         default: return state;
@@ -35,5 +48,6 @@ store.subscribe(() => {
 });
 
 store.dispatch(buy_pokemon_action(3));
+store.dispatch(return_pokemon_action(2));
 
 
