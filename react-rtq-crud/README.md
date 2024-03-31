@@ -204,7 +204,28 @@ Ahora, si visitamos la página `/create-task`, obtenemos el formulario y podemos
 
 Para realizar esto, vamos a componente `TaskForm` e importamos **React Router Dom** e importamos el hook `useNavigate`.
 
-Ahora, vamos a crear un boton para que desde `TaskList` se pueda redireccionar al componente `TaskForm`.
+Ahora, vamos a crear un boton para que desde `TaskList` se pueda redireccionar al componente `TaskForm`. Esto lo realizamos de la siguiente manera:
+
+![React-Rtq--Crud](https://i.postimg.cc/wBrkd1h5/react-rtq-18.jpg "Update")
+
+Una vez realizado esto, vamos a editar o actualizar una tarea. Para ello, vamos a crear para cada tarea que se mapea un link de edit para que nos envie a la ruta `/edit-task`.
+
+Luego, vamos a utilizar el hook `useParams` para saber si estamos creando o editando una tarea de acuerdo al parametro `id` que podemos (caso de update) o no (caso de create) extraer.
+
+Si estamos editando una tarea, por ejemplo, con `id = 1`, vamos a utilizar el hook `useEffect` para obtener el param que contiene el id apenas carga la página.
+
+Luego, para acceder a estado que contiene todas las tareas, utilizamos `useSelector` y buscamos la tarea que coincida con el id pasado por parametro.
+
+Pero al recargar la página, observamos que en los campos donde se completa el titulo y la descripción de la tarea no se muestran los valores que tienen almacenado. Para solucionar esto, agregamos en el `input` correspondiente al titulo y en el `textarea` correspondiente a la descripción, la propiedad `value` con el valor almacenado en el estado global.
+
+Luego de esto, nos dirigimos a la función `handleSubmit` y en lugar de agregar una tarea, vamos a consultar si existe un `id` y ejecutamos la función de actualizar/editar la tarea.
+![React-Rtq--Crud](https://i.postimg.cc/wBrkd1h5/react-rtq-19.jpg "Update")
+
+![React-Rtq--Crud](https://i.postimg.cc/XvZ2Hrq5/react-rtq-19.jpg "Update")
+
+![React-Rtq--Crud](https://i.postimg.cc/cJVFVdtb/react-rtq-20.jpg "Update")
+
+
 
 
 

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addTask } from "../features/tasks/taskSlice";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTask, updateTask } from "../features/tasks/taskSlice";
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const TasksForm = () => {
     const [task, setTask] = useState({
@@ -13,6 +13,8 @@ const TasksForm = () => {
     // funcion que nos permite disparar eventos desde el slice
     const dispatch = useDispatch(); 
     const navigate = useNavigate();
+    const { id } = useParams();
+    const tasks = useSelector(state => state.tasks);
 
     const handleChange = event => {
         setTask({
@@ -26,17 +28,39 @@ const TasksForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        dispatch(addTask({
-            ...task,
-            id: uuid()
-        }));
+
+        if (id) {
+            dispatch(updateTask(task));
+        } else {
+            dispatch(addTask({
+                ...task,
+                id: uuid()
+            }));
+        }
         navigate('/');
     }
+
+    useEffect(() => {
+        if (id) {
+            setTask(tasks.find(task => task.id === id))
+        }
+    }, []);
     
     return (
         <form onSubmit={handleSubmit}>
-            <input name="title" type='text' placeholder='title' onChange={handleChange}/>
-            <textarea name='description' placeholder='description' onChange={handleChange}></textarea>
+            <input 
+                name="title" 
+                type='text' 
+                placeholder='title' 
+                onChange={handleChange}
+                value={task.title}
+            />
+            <textarea 
+                name='description' 
+                placeholder='description' 
+                onChange={handleChange}
+                value={task.description}
+            />
             <button>Save</button>
         </form>
     )
