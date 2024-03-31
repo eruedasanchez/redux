@@ -76,6 +76,16 @@ La agregamos a los casos de la función `games_reducer` y disparamos la acción 
 
 ![React-Redux--Tutorial](https://i.postimg.cc/vmBt38N1/react-redux-tutorial-3.jpg "Multiples acciones")
 
+### Agregando más productos en el store
+
+Ahora, queremos expandir nuestra tienda y no solo vender videojuegos de Pokemon sino que vamos a sumar juegos de Yoshi.
+
+Para ello, vamos a agregar en estado inicial `default_games_state` 10 unidades de Yoshi.
+
+Luego, creamos las acciones correspondientes a comprar y retornar los juegos de Yoshi para agregarlas en el `games_reducer`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/CLTFpmk7/react-redux-tutorial-4.jpg "Agregando más productos en el store")
+
 
 
 
