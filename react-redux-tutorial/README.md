@@ -17,12 +17,24 @@
 
 1. [Inicialización del proyecto](#inicialización-del-proyecto)
 2. [Conceptos claves](#conceptos-claves)
-3. [Creación del Store y Reducers](#creación-del-Store-y-Reducers)
-4. [Creación del Action y Dispatch](#creación-del-Action-y-Dispatch)
+3. [Creación del Store y Reducers](#creación-del-store-y-reducers)
+4. [Creación del Action y Dispatch](#creación-del-action-y-dispatch)
 5. [Multiples acciones](#multiples-acciones)
 6. [Agregando más productos en el store](#agregando-más-productos-en-el-store)
 7. [Creando multiples reducers y combinandolos](#creando-multiples-reducers-y-combinandolos)
-8. [Instalación de React](#instalación-de-React)
+8. [Instalación de React](#instalación-de-react)
+9. [Maquetación de la tienda](#maquetación-de-la-tienda)
+10. [Creando la estructura de Redux dentro de React](#creando-la-estructura-de-redux-dentro-de-react)
+11. [Conectando Redux a React](#conectando-redux-a-react)
+12. [Uso de Logger Middleware](#uso-de-logger-middleware)
+13. [Uso de mapStateToProps](#uso-de-mapstatetoprops)
+14. [Uso de mapDispatchToProps](#uso-de-mapdispatchtoprops)
+15. [Uso de Hooks con React y Redux](#uso-de-hooks-con-react-y-redux)
+16. [Inicio del proyecto y middleware](#inicio-del-proyecto-y-middleware)
+17. [Creación de acciones asíncronas](#creación-de-acciones-asíncronas)
+18. [Creación de los reducers](#creación-de-los-reducers)
+19. [Trabajando con Thunk](#trabajando-con-thunk)
+20. [Mostrando el resultado del buscador](#mostrando-el-resultado-del-buscador)
 
 ### Inicialización del proyecto
 
@@ -140,7 +152,7 @@ Mientras que en la carpeta `redux`, creamos las carpetas `actions` y `reducers`.
 
 ### Maquetación de la tienda
 
-Para maquetar la tienda, comenzamos instalando **Bootstrap** en el archivo `App.js`.
+Para maquetar la tienda, comenzamos instalando [Bootstrap](https://getbootstrap.com/) en el archivo `App.js`.
 
 Luego, aplicamos estilos en el archivo `App.css`.
 
@@ -150,7 +162,7 @@ Ahora, creamos el componente `CantidadPokemon` y `ComprarPokemon`.
 
 ![React-Redux--Tutorial](https://i.postimg.cc/CKmN2NpY/react-redux-tutorial-9.jpg "Maquetación de la tienda")
 
-### Creando la estructura de Redux dentro de React.
+### Creando la estructura de Redux dentro de React
 
 Comenzamos creando el primer *action* situado en la carpeta `actions` dentro de la carpeta `redux`. 
 
@@ -172,7 +184,7 @@ Por último, creamos el store en la carpeta `redux` con el nombre `store.js`.
 
 ### Conectando Redux a React
 
-Para conectar Redux a React, comenzamos importando el componenete `Provider` de `react-redux`.
+Para conectar Redux a React, comenzamos importando el componenete `Provider` de [React Redux](https://react-redux.js.org/).
 
 Un provider es un componente que envuelve a la aplicación y otorga la posibilidad de conectarse al `store`.
 
@@ -182,15 +194,15 @@ Luego le pasamos al `provider` como prop el store definido en el archivo `store.
 
 ### Uso de Logger Middleware
 
-Comenzamos instalando la libreria `Redux Dev Tools Extension` desde la web.
+Comenzamos instalando la libreria [React Redux](https://react-redux.js.org/) desde la web.
 
-Luego, instalamos `redux devtools extension` con el siguiente comando para aplicar el middleware `composeWithDevTools`:
+Luego, instalamos [Redux Devtools Extension](https://www.npmjs.com/package/redux-devtools-extension) con el siguiente comando para aplicar el middleware `composeWithDevTools`:
 
  ```bash
 $ npm install @redux-devtools/extension 
 ```
 
-Luego, inspeccionamos la página del navegador y clickeamos en la opción **Redux** y vemos que tenemos la herramienta instalada.
+Luego, inspeccionamos la página del navegador y clickeamos en la opción [Redux](https://redux.js.org/) y vemos que tenemos la herramienta instalada.
 
 ![React-Redux--Tutorial](https://i.postimg.cc/hvbzRbPD/react-redux-tutorial-15.jpg "Conectando Redux a React")
 
@@ -208,7 +220,7 @@ Por último, podemos acceder a las propiedades del estado, por ejemplo, para obt
 
 ### Uso de mapDispatchToProps
 
-Ahora, vamos a crear el dispatch para el componente `ComprarPokemon`. Comenzamos importando `connect` de `react-redux`.
+Ahora, vamos a crear el dispatch para el componente `ComprarPokemon`. Comenzamos importando `connect` de [React Redux](https://react-redux.js.org/).
 
 Luego, vamos a mapear los `dispatch`. Para ello, necesito llamar a las `actions`, las colocamos dentro de la función `mapDispatchToProps` y la pasamos como primer parámetro de `connect`. El primer parametro lo dejamos en `null` porque colocamos de acuerdo a los estados y en el segundo parámetro colocamos de acuerdo al dispatch.
 
@@ -238,7 +250,7 @@ Ahora, nos vamos a dirigir al componente `ComprarPokemonFunction` y vamos a util
 
 Ahora, nos vamos a enfocar en las **acciones asíncronas** creando un buscador de pokemon, obteniendo los datos de una API y mostrando el resultado por pantalla.
 
-Comenzamos instalando la dependencia `thunk` de la siguiente manera:
+Comenzamos instalando la dependencia [Thunk](https://github.com/reduxjs/redux-thunk) de la siguiente manera:
 
 ```bash
 $ npm i redux-thunk
@@ -256,11 +268,11 @@ Luego, creamos el componente `ResultadoPokemon` y lo importamos al componente `A
 
 ### Creación de acciones asíncronas
 
-Comenzamos creando la primer *action*. Para ello, voy a la carpeta `redux`, luego en la carpeta `actions` y alli dentro, creo el archivo `buscadorAction.js`.
+Comenzamos creando la primer *action*. Para ello, voy a la carpeta [Redux](https://redux.js.org/), luego en la carpeta `actions` y alli dentro, creo el archivo `buscadorAction.js`.
 
 Por lo tanto, va a crear una acción 'grande' que va a contener 3 acciones más pequeñas. Es decir, cuando realizamos una busqueda, vamos a crear una acción general que englobe las acciones mientras se busca un pokemon, en el caso de que se encuentre, retorno un mensaje de exito y en caso contrario, retornar un mensaje de fallo.
 
-Luego de crear el archivo `buscadorAction.js`, instalamos la libreria **Axios** para poder realizar peticiones de la siguiente manera:
+Luego de crear el archivo `buscadorAction.js`, instalamos la libreria [Axios](https://github.com/lifeomic/axios-fetch) para poder realizar peticiones de la siguiente manera:
 
  ```bash
 $ npm install axios 
@@ -282,7 +294,7 @@ Luego de crear el `buscadoReducer`, lo importamos en `rootReducers.js` para comb
 
 ### Trabajando con Thunk 
 
-Ahora, como vamos a realizar peticiones, vamos a trabajar con **Thunk** y por lo tanto, comenzamos configurandolo. 
+Ahora, como vamos a realizar peticiones, vamos a trabajar con [Thunk](https://github.com/reduxjs/redux-thunk) y por lo tanto, comenzamos configurandolo. 
 
 Para ello, nos dirigimos al archivo `store.js` y cuando creamos el store como ya tenemos ocupado el campo de los middlewares con `composeWithDevTools`, entonces tengo que ejecutar `applyMiddleware(thunk)` como un parametro de `composeWithDevTools`. 
 
@@ -301,24 +313,3 @@ Para ello, nos dirigimos al componente `ResultadoPokemon`y utilizamos el hook `u
 Luego de ello, vamos mostrando los resultados de acuerdo al input ingresado para la búsqueda.
 
 ![React-Redux--Tutorial](https://i.postimg.cc/g0mSQdDh/react-redux-tutorial-27.jpg "Mostrando el resultado del buscador")
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
