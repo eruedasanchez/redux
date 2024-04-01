@@ -102,6 +102,29 @@ Ahora, vamos a crear las acciones para comprar la consola nintendo Switch y PS5.
 
 Por último, ejecutamos la acción de comprar consola nintendo con el dispatch.
 
+### Instalación de React
+
+En esta sección, vamos a realizar la instalación de React. Para ello, nos situamos en la carpeta donde queremos instalar nuestro proyecto y ejecutamos el siguiente comando:
+
+npx create-react-app practica-react-redux donde practica-react-redux es el nombre del proyecto. 
+
+Luego de inicializar el proyecto, nos situamos en la carpeta `practica-react-redux` e instalamos **bootstrap** de la siguiente manera:
+
+npm i bootstrap
+
+Luego, voy a instalar redux y tambien la dependencia react-redux que funciona como capa intermedia para conectar react con redux
+ejecutando el siguiente comando:
+
+npm i redux react-redux
+
+Por último, creamos la arquitectura del proyecto. Dentro de la carpeta `src`, vamos a crear las carpetas `components` y `redux`. Dentro de la carpeta `components`, creamos los componentes `CantidadPokemon.jsx` y `ComprarPokemon.jsx`. 
+Mientras que en la carpeta `redux`, creamos las carpetas `actions` y `reducers`. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/Gt5TbNwq/react-redux-tutorial-7.jpg "Instalación de React")
+
+
+
+
 
 
 
