@@ -86,8 +86,21 @@ Luego, creamos las acciones correspondientes a comprar y retornar los juegos de 
 
 ![React-Redux--Tutorial](https://i.postimg.cc/CLTFpmk7/react-redux-tutorial-4.jpg "Agregando más productos en el store")
 
+### Creando multiples reducers y combinandolos
 
+Como nuestra tienda ha crecido demasiado, ahora vamos a vender también consolas. Para administrar las consolas, vamos a tener que crear un nuevo *reducer* llamado `consoles_reducer`.
 
+Una vez creado el nuevo, reducer lo queremos combinar con el `games_reducer` cuando creamos el store. Para ello, vamos a llamar otra función de redux llamada `combineReducers`.
+
+Una vez que importamos la función `combineReducers`, creamos una constante llamada `rootReducers` que va a combinar los dos reducers que tenemos y lo combinamos cuando creamos el store.
+
+Por último, imprimos por pantalla el estado inicial del store con los reducers combinados.
+
+![React-Redux--Tutorial](https://i.postimg.cc/ncYd2GxM/react-redux-tutorial-6.jpg "Creando multiples reducers y combinandolos")
+
+Ahora, vamos a crear las acciones para comprar la consola nintendo Switch y PS5.
+
+Por último, ejecutamos la acción de comprar consola nintendo con el dispatch.
 
 
 
