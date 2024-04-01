@@ -1,15 +1,16 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/eruedasanchez/NJS-14)
-  ![GitHub stars](https://img.shields.io/github/stars/eruedasanchez/nextJS-14?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/eruedasanchez/nextJS-14?style=social)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/eruedasanchez/redux)
+  ![GitHub stars](https://img.shields.io/github/stars/eruedasanchez/redux?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/eruedasanchez/redux?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/RSanchez_Eze?style=social)](https://twitter.com/intent/follow?screen_name=RSanchez_Eze)
   <br/>
   <br/>
 
-  <h1 align="center">React - React Toolkit Query - Crud</h1>
-
-  Tutorial de [Next.js 14](https://github.com/vercel/next.js) 
+  <h1 align="center">React - Redux Toolkit Query (RTQ)</h1>
+  
+  Tutorial de [Redux Toolkit Query (RTQ)](https://redux-toolkit.js.org/)
+  <h4 align="center">Creación de un CRUD</h4> 
 </div>
 <br/>
 
@@ -17,24 +18,27 @@
 
 1. [Inicialización del proyecto](#inicialización-del-proyecto)
 2. [Store](#store)
+3. [Provider](#provider)
+4. [Reducer](#reducer) 
+5. [Probando el store](#probando-el-store)
+6. [List & Create](#list-&-create)
+7. [Delete](#delete)
+8. [Update](#update)
 
 ### Inicialización del proyecto
 
 Una vez inicializado el proyecto, procedemos a ejecutar los siguientes comandos para visualizar el proyecto:
 
 ```bash
-$ cd hello-world
+$ cd react-rtq-crud
 $ npm run dev
 ```
-
-
-
 
 ### Store
 
 Vamos a utilizar el **store** para almacenar los datos de nuestra aplicación.
 
-Luego, vamos a importar `configureStore` de `'@reduxjs/toolkit'`. 
+Luego, vamos a importar `configureStore` de [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit). 
 
 `configureStore` devuelve un objeto. En `configureStore`, podemos dividir nuestro estado en multiples archivos para poder mantenerlo.
 
@@ -60,7 +64,7 @@ Ahora, tenemos el contexto creado pero se encuentra vacio. Por lo tanto, tenemos
 la que vamos a poder actualizar el estado, crear operaciones para alterar el
 estado. Por lo tanto, haciendo la analogia con los `useState`, podriamos pensar a los reducers como las funciones `set` que alteran el valor del estado.
 
-Para ello, **Redux** nos ofrece los **Redux State Slice** que representa solo una parte de todo el estado.
+Para ello, [Redux](https://redux-toolkit.js.org/) nos ofrece los **Redux State Slice** que representa solo una parte de todo el estado.
 
 Como vamos a crear una aplicacion de tareas, vamos a crear la carpeta `features` dentro de `src`. Dentro de la carpeta `features`, creo la carpeta `tasks` y dentro de ella, el slice representa por el archivo `taskSlice.js`
 
@@ -78,7 +82,7 @@ Por el momento, unicamente lo definimos pero no agregamos ninguna función.
 
 ![React-Rtq--Crud](https://i.postimg.cc/3w4Cd9pm/react-rtq-3.jpg "Reducer")
 
-### Importanto el taskSlice en el Store.
+### Importando el task slice en el store
 
 Una vez creado, lo voy a exportar para poder utilizarlo en el **store** de la siguiente manera:
 
@@ -96,7 +100,7 @@ Por lo tanto, al llamarlo nuevamente en `store.js`, no voy a traer todo el objet
 
 Con esto, ya tenemos configurado inicialmente el **store**.
 
-### Pobando el store
+### Probando el store
 
 Ahora, vamos a probar el **store** en el archivo `App.js` y vamos a llamar al estado. Para ello, vamos a importar `useDispatch` y `useSelector` de `react-redux`. 
 
@@ -128,7 +132,7 @@ Ahora, si quiero acceder a las tareas pero desde el componente `TasksForm.js` co
 
 Por lo tanto, si actualizo el estado desde `TaaskForm`, la actualización tambien impactará en `App.js` 
 
-### List & Create (Crud)
+### List & Create
 
 Ahora, vamos a enfocarnos en como listar los datos de una lista de tareas.
 
@@ -170,13 +174,13 @@ Luego, las importo en `TaskForm` y la aplico en la función `handleSubmit`.
 Ahora, podemos ver que la tarea se agrega correctamente pero se producce un error porque no se genera el
 id.
 
-Para solucionar este problema, vamos a utilizar la libreria `uuid` y vamos a pasar el valor generado cuando se agrega una nueva tarea.
+Para solucionar este problema, vamos a utilizar la libreria [uuid](https://www.npmjs.com/package/uuid) y vamos a pasar el valor generado cuando se agrega una nueva tarea.
 
 Por lo tanto, cuando este agregando una nueva tarea dentro del dispatch, voy a copiar el titulo y la descripción de la tarea pero ademas le voy a agregar un id. Esto lo realizo en el componente `TaskForm` cuando realizo la operación `addTask` en la función `handleSubmit`.  
 
 ![React-Rtq--Crud](https://i.postimg.cc/wjMtK5Rs/react-rtq-15.jpg "List & Create")
 
-### Delete (cruD)
+### Delete
 
 Ahora, nos vamos a enfocar en como hacer para eliminar una o varias tareas. 
 
@@ -190,11 +194,13 @@ Luego, para usarlo, en el componente `Task List`, voy a importar la función `us
 
 ![React-Rtq--Crud](https://i.postimg.cc/bJLTj3Db/react-rtq-16.jpg "Delete")
 
-### Update (crUd)
+### Update
 
 Ahora, vamos a actualizar la tarea. Pero primero, comenzamos añadiendo **React Router Dom** a nuestra aplicación ejecutando el siguiente comando:
 
-npm i react-router-dom@6 (version 6)
+```bash
+$ npm i react-router-dom@6 (version 6)
+```
 
 Luego, voy al archivo `App.js` y comienzo importando **React Router Dom** y luego configurando el componente `App`.
 
@@ -219,15 +225,9 @@ Luego, para acceder a estado que contiene todas las tareas, utilizamos `useSelec
 Pero al recargar la página, observamos que en los campos donde se completa el titulo y la descripción de la tarea no se muestran los valores que tienen almacenado. Para solucionar esto, agregamos en el `input` correspondiente al titulo y en el `textarea` correspondiente a la descripción, la propiedad `value` con el valor almacenado en el estado global.
 
 Luego de esto, nos dirigimos a la función `handleSubmit` y en lugar de agregar una tarea, vamos a consultar si existe un `id` y ejecutamos la función de actualizar/editar la tarea.
+
 ![React-Rtq--Crud](https://i.postimg.cc/wBrkd1h5/react-rtq-19.jpg "Update")
 
 ![React-Rtq--Crud](https://i.postimg.cc/XvZ2Hrq5/react-rtq-19.jpg "Update")
 
 ![React-Rtq--Crud](https://i.postimg.cc/cJVFVdtb/react-rtq-20.jpg "Update")
-
-
-
-
-
-
-
