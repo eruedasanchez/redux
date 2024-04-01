@@ -292,6 +292,17 @@ Ahora, nos dirigimos al componente `BuscadorPokemon`. Como este componente, tamb
 
 ![React-Redux--Tutorial](https://i.postimg.cc/28tYkxr8/react-redux-tutorial-26.jpg "Trabajando con Thunk")
 
+### Mostrando el resultado del buscador
+
+Ahora, nos vamos a enfocar en mostrar el resultado de la busqueda.
+
+Para ello, nos dirigimos al componente `ResultadoPokemon`y utilizamos el hook `useSelector` para obtener el estado actual global.
+
+Luego de ello, vamos mostrando los resultados de acuerdo al input ingresado para la búsqueda.
+
+![React-Redux--Tutorial](https://i.postimg.cc/g0mSQdDh/react-redux-tutorial-27.jpg "Mostrando el resultado del buscador")
+
+
 
 
 
