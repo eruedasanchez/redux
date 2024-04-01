@@ -234,6 +234,75 @@ Ahora, nos vamos a dirigir al componente `ComprarPokemonFunction` y vamos a util
 
 ![React-Redux--Tutorial](https://i.postimg.cc/k5XPR2Gj/react-redux-tutorial-19.jpg "Uso de Hooks con React y Redux")
 
+### Inicio del proyecto y middleware
+
+Ahora, nos vamos a enfocar en las **acciones asíncronas** creando un buscador de pokemon, obteniendo los datos de una API y mostrando el resultado por pantalla.
+
+Comenzamos instalando la dependencia `thunk` de la siguiente manera:
+
+```bash
+$ npm i redux-thunk
+```
+
+Luego, vamos a crear el componente **Buscador**. Para ello, creamos la carpeta `buscador` dentro de `components`. Dentro de `buscador`, creamos los componentes `BuscadorPokemon.jsx` y `ResultadoPokemon.jsx`.
+
+Comenzamos creando el componente `BuscadorPokemon`. Una vez que lo creamos, lo importamos al componente `App`.
+
+Luego, creamos el componente `ResultadoPokemon` y lo importamos al componente `App`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/mr74h4hm/react-redux-tutorial-20.jpg "Inicio del proyecto y middleware")
+
+![React-Redux--Tutorial](https://i.postimg.cc/5yKdDNk2/react-redux-tutorial-21.jpg "Inicio del proyecto y middleware")
+
+### Creación de acciones asíncronas
+
+Comenzamos creando la primer *action*. Para ello, voy a la carpeta `redux`, luego en la carpeta `actions` y alli dentro, creo el archivo `buscadorAction.js`.
+
+Por lo tanto, va a crear una acción 'grande' que va a contener 3 acciones más pequeñas. Es decir, cuando realizamos una busqueda, vamos a crear una acción general que englobe las acciones mientras se busca un pokemon, en el caso de que se encuentre, retorno un mensaje de exito y en caso contrario, retornar un mensaje de fallo.
+
+Luego de crear el archivo `buscadorAction.js`, instalamos la libreria **Axios** para poder realizar peticiones de la siguiente manera:
+
+ ```bash
+$ npm install axios 
+```
+
+Creamos las 3 acciones más pequeñas que engloban la acción principal de la siguiente manera:
+
+![React-Redux--Tutorial](https://i.postimg.cc/XJQK3vGR/react-redux-tutorial-22.jpg "Creación de acciones asíncronas")
+
+### Creación de los reducers
+
+Comenzamos creando nuestro primer reducer dentro de la carpeta `reducers` al que llamamos `buscadorReducer.js`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/TPh7Q9fD/react-redux-tutorial-23.jpg "Creación de los reducers")
+
+Luego de crear el `buscadoReducer`, lo importamos en `rootReducers.js` para combinarlo con el reducer `game_shop`
+
+![React-Redux--Tutorial](https://i.postimg.cc/QdfYpPGD/react-redux-tutorial-24.jpg "Creación de los reducers")
+
+### Trabajando con Thunk 
+
+Ahora, como vamos a realizar peticiones, vamos a trabajar con **Thunk** y por lo tanto, comenzamos configurandolo. 
+
+Para ello, nos dirigimos al archivo `store.js` y cuando creamos el store como ya tenemos ocupado el campo de los middlewares con `composeWithDevTools`, entonces tengo que ejecutar `applyMiddleware(thunk)` como un parametro de `composeWithDevTools`. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/6pGXyGpV/react-redux-tutorial-25.jpg "Trabajando con Thunk")
+
+Ahora, nos dirigimos al componente `BuscadorPokemon`. Como este componente, también va a disparar acciones invocamos el hook `useDispatch`. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/28tYkxr8/react-redux-tutorial-26.jpg "Trabajando con Thunk")
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 
 
