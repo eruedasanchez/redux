@@ -1,27 +1,37 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/eruedasanchez/NJS-14)
-  ![GitHub stars](https://img.shields.io/github/stars/eruedasanchez/nextJS-14?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/eruedasanchez/nextJS-14?style=social)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/eruedasanchez/redux)
+  ![GitHub stars](https://img.shields.io/github/stars/eruedasanchez/redux?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/eruedasanchez/redux?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/RSanchez_Eze?style=social)](https://twitter.com/intent/follow?screen_name=RSanchez_Eze)
   <br/>
   <br/>
 
   <h1 align="center">React - Redux - Principios</h1>
 
-  Tutorial de [Next.js 14](https://github.com/vercel/next.js) 
+  Tutorial de [Redux Toolkit Query](https://redux.js.org/) 
 </div>
 <br/>
 
 # Índice
 
 1. [Inicialización del proyecto](#inicialización-del-proyecto)
-2. [Store](#store)
+2. [Conceptos claves](#conceptos-claves)
+3. [Creación del Store y Reducers](#creación-del-Store-y-Reducers)
+4. [Creación del Action y Dispatch](#creación-del-Action-y-Dispatch)
+5. [Multiples acciones](#multiples-acciones)
+6. [Agregando más productos en el store](#agregando-más-productos-en-el-store)
+7. [Creando multiples reducers y combinandolos](#creando-multiples-reducers-y-combinandolos)
+8. [Instalación de React](#instalación-de-React)
 
 ### Inicialización del proyecto
 
-Para inicializar el proyecto ejecutamos por consola npm init -y y 
-luego npm i redux.
+Para inicializar el proyecto ejecutamos:
+
+```bash
+$ npm init -y
+$ npm i redux
+```
 
 Luego de ejecutar esto, creamos el archivo `app.js`.
 
@@ -104,24 +114,61 @@ Por último, ejecutamos la acción de comprar consola nintendo con el dispatch.
 
 ### Instalación de React
 
-En esta sección, vamos a realizar la instalación de React. Para ello, nos situamos en la carpeta donde queremos instalar nuestro proyecto y ejecutamos el siguiente comando:
+En esta sección, vamos a realizar la instalación de [React](https://es.react.dev/). Para ello, nos situamos en la carpeta donde queremos instalar nuestro proyecto y ejecutamos el siguiente comando:
 
-npx create-react-app practica-react-redux donde practica-react-redux es el nombre del proyecto. 
+```bash
+$ npx create-react-app practica-react-redux
+```
+donde `practica-react-redux` es el nombre del proyecto. 
 
-Luego de inicializar el proyecto, nos situamos en la carpeta `practica-react-redux` e instalamos **bootstrap** de la siguiente manera:
+Luego de inicializar el proyecto, nos situamos en la carpeta `practica-react-redux` e instalamos [Bootstrap](https://getbootstrap.com/):
 
-npm i bootstrap
+```bash
+$ npm i bootstrap
+```
 
-Luego, voy a instalar redux y tambien la dependencia react-redux que funciona como capa intermedia para conectar react con redux
-ejecutando el siguiente comando:
+Ahora, instalamos [Redux](https://redux.js.org/) y tambien la dependencia [React Redux](https://redux.js.org/) que funciona como capa intermedia para conectar [React](https://es.react.dev/) con [Redux](https://redux.js.org/) ejecutando el siguiente comando:
 
-npm i redux react-redux
+```bash
+$ npm i redux react-redux
+```
 
 Por último, creamos la arquitectura del proyecto. Dentro de la carpeta `src`, vamos a crear las carpetas `components` y `redux`. Dentro de la carpeta `components`, creamos los componentes `CantidadPokemon.jsx` y `ComprarPokemon.jsx`. 
 Mientras que en la carpeta `redux`, creamos las carpetas `actions` y `reducers`. 
 
 ![React-Redux--Tutorial](https://i.postimg.cc/Gt5TbNwq/react-redux-tutorial-7.jpg "Instalación de React")
 
+### Maquetación de la tienda
+
+Para maquetar la tienda, comenzamos instalando **Bootstrap** en el archivo `App.js`.
+
+Luego, aplicamos estilos en el archivo `App.css`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/Y903BWtF/react-redux-tutorial-8.jpg "Maquetación de la tienda")
+
+Ahora, creamos el componente `CantidadPokemon` y `ComprarPokemon`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/CKmN2NpY/react-redux-tutorial-9.jpg "Maquetación de la tienda")
+
+### Creando la estructura de Redux dentro de React.
+
+Comenzamos creando el primer *action* situado en la carpeta `actions` dentro de la carpeta `redux`. 
+
+Llamamos el archivo de nuestro primer action a `gameShopAction.js` e importamos el *action* de comprar y retornar pokemon que realizamos en capitulos anteriores.
+
+![React-Redux--Tutorial](https://i.postimg.cc/j2Djt87T/react-redux-tutorial-10.jpg "Creando la estructura de Redux dentro de React")
+
+Luego, creamos el *reducer* en la carpeta `reducers` llamado `gameShopReducer.js`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/G3f2q1Wm/react-redux-tutorial-11.jpg "Creando la estructura de Redux dentro de React")
+
+Ahora, creamos el archivo `rootReducers.js` dentro de la carpeta `reducers` para combinar los reducers. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/wvfvKK3F/react-redux-tutorial-12.jpg "Creando la estructura de Redux dentro de React")
+
+Por último, creamos el store en la carpeta `redux` con el nombre `store.js`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/vTCZBWrV/react-redux-tutorial-13.jpg "Creando la estructura de Redux dentro de React")
 
 
 
