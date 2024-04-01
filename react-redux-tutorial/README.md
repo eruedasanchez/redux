@@ -216,6 +216,27 @@ Por último, ejecutamos las acciones cuando clickeamos los botones.
 
 ![React-Redux--Tutorial](https://i.postimg.cc/pLDN44L8/react-redux-tutorial-17.jpg "Uso de mapDispatchToProps")
 
+### Uso de Hooks con React y Redux
+
+Ahora vamos a crear la misma funcionalidad que en el ejemplo visto pero con funciones.
+
+Por lo tanto, comenzamos convirtiendo el componente de clase `CantidadPokemon.jsx` al componente de función `CantidadPokemonFunction.jsx`.
+
+Lo mismo para el componente de clase `ComprarPokemon.jsx` al componente de función `ComprarPokemonFunction.jsx`.
+
+Una vez de creados estos dos nuevos componentes, los incorporamos en el archivo principal `App.js`.
+
+![React-Redux--Tutorial](https://i.postimg.cc/25cRQCBC/react-redux-tutorial-18.jpg "Uso de Hooks con React y Redux")
+
+Ahora, vamos a utilizar Redux en el componente `CantidadPokemonFunction`. Para ello, vamos a utilizar el hook `useSelector` para obtener estados y `useDispatch` para enviar acciones. En este componente, solo vamos a utilizar `useSelector`. 
+
+Ahora, nos vamos a dirigir al componente `ComprarPokemonFunction` y vamos a utilizar el hook `useDispatch` para disparar la ejecución de las acciones cuando se realice click en los respectivos botones.
+
+![React-Redux--Tutorial](https://i.postimg.cc/k5XPR2Gj/react-redux-tutorial-19.jpg "Uso de Hooks con React y Redux")
+
+
+
+
 
 
 

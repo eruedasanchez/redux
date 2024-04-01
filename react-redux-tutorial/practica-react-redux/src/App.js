@@ -1,8 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import CantidadPokemon from './components/CantidadPokemon';
-import ComprarPokemon from './components/ComprarPokemon';
+import CantidadPokemonFunction from './components/CantidadPokemonFunction';
+import ComprarPokemonFunction from './components/ComprarPokemonFunction';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -20,9 +20,9 @@ function App() {
                 <div className="col-8">
                   <div className="card-body">
                     <div className="card-title h3 text-center">
-                      <CantidadPokemon/>
+                      <CantidadPokemonFunction/>
                     </div>
-                    <ComprarPokemon/>
+                    <ComprarPokemonFunction/>
                   </div>
                 </div>
               </div>
