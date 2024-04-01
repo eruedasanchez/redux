@@ -170,6 +170,30 @@ Por último, creamos el store en la carpeta `redux` con el nombre `store.js`.
 
 ![React-Redux--Tutorial](https://i.postimg.cc/vTCZBWrV/react-redux-tutorial-13.jpg "Creando la estructura de Redux dentro de React")
 
+### Conectando Redux a React
+
+Para conectar Redux a React, comenzamos importando el componenete `Provider` de `react-redux`.
+
+Un provider es un componente que envuelve a la aplicación y otorga la posibilidad de conectarse al `store`.
+
+Luego le pasamos al `provider` como prop el store definido en el archivo `store.js`. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/7hdqGFWK/react-redux-tutorial-14.jpg "Conectando Redux a React")
+
+### Uso de Logger Middleware
+
+Comenzamos instalando la libreria `Redux Dev Tools Extension` desde la web.
+
+Luego, instalamos `redux devtools extension` con el siguiente comando para aplicar el middleware `composeWithDevTools`:
+
+ ```bash
+$ npm install @redux-devtools/extension 
+```
+
+Luego, inspeccionamos la página del navegador y clickeamos en la opción **Redux** y vemos que tenemos la herramienta instalada.
+
+![React-Redux--Tutorial](https://i.postimg.cc/hvbzRbPD/react-redux-tutorial-15.jpg "Conectando Redux a React")
+
 
 
 
