@@ -194,6 +194,27 @@ Luego, inspeccionamos la página del navegador y clickeamos en la opción **Redu
 
 ![React-Redux--Tutorial](https://i.postimg.cc/hvbzRbPD/react-redux-tutorial-15.jpg "Conectando Redux a React")
 
+### Uso de mapStateToProps
+
+El provider nos permite que el *store* este disponible en toda la aplicación. Sin embargo, tenemos que conectarlo a los componentes.
+
+Para ello, nos dirigimos al componente `CantidadPokemon.jsx` e importamos `connect` de `react-redux`.
+
+Luego, la aplicamos en una función currificada cuando exportamos el componente donde la primer función se encarga de pasar el estado a props y la segunda función es el componente `CantidadPokemon.jsx`.
+
+Por último, podemos acceder a las propiedades del estado, por ejemplo, para obtener la cantidad de unidades de pokemon que en este caso es 10. 
+
+![React-Redux--Tutorial](https://i.postimg.cc/sgkydTw5/react-redux-tutorial-16.jpg "Uso de mapStateToProps")
+
+### Uso de mapDispatchToProps
+
+Ahora, vamos a crear el dispatch para el componente `ComprarPokemon`. Comenzamos importando `connect` de `react-redux`.
+
+Luego, vamos a mapear los `dispatch`. Para ello, necesito llamar a las `actions`, las colocamos dentro de la función `mapDispatchToProps` y la pasamos como primer parámetro de `connect`. El primer parametro lo dejamos en `null` porque colocamos de acuerdo a los estados y en el segundo parámetro colocamos de acuerdo al dispatch.
+
+Por último, ejecutamos las acciones cuando clickeamos los botones.
+
+![React-Redux--Tutorial](https://i.postimg.cc/pLDN44L8/react-redux-tutorial-17.jpg "Uso de mapDispatchToProps")
 
 
 
