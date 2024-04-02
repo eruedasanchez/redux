@@ -20,10 +20,8 @@
 4. [Creación del Store](#creación-del-store)
 5. [Creación del Provider](#creación-del-provider)
 6. [Aplicando los actions](#aplicando-los-actions)
-7. [](#)
-8. [](#)
-9. [](#)
-10. [](#)
+7. [Ejemplo 2 Solicitud de datos a un backend](#ejemplo-2-solicitud-de-datos-a-un-backend)
+8. [Obteniendo los datos del backend](#obteniendo-los-datos-del-backend)
 
 ### Inicialización del proyecto 
 
