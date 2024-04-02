@@ -126,9 +126,38 @@ Realizada dicha configuración, regresamos al componente `HomePage` y extraemos 
 
 ![Nextjs-Redux](https://i.postimg.cc/PJ4brB33/nextjs-redux-10.jpg "Aplicando los actions")
 
+### Ejemplo 2. Solicitud de datos a un backend
 
+Para este ejemplo, vamos a utilizar datos que vienen desde una API. Por lo tanto, vamos a crear el archivo `userApi.ts` dentro de la carpeta `services`.
 
+Para obtener los datos, vamos a utilizar un backend de prueba llamado [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+que contiene una base de datos con usuarios que podemos pedir.
 
+Luego, vamos a utilizar el método de [Redux](https://redux-toolkit.js.org/) `createApi` para crear justamente nuestra API.
+
+![Nextjs-Redux](https://i.postimg.cc/PJgfrpjf/nextjs-redux-11.jpg "Solicitud de datos a un backend")
+
+Donde en `reducerPath` colocamos el nombre de nuestra Api y `baseUrl` corresponde al dominio donde pedimos los datos.
+
+El parametro `builder` nos permite distinguir entre las distintas peticiones (GET, POST, DELETE, PUT) porque builder tiene el metodo query para obtener solicitudes GET y el método mutation para alterar datos en el backend como POST, DELETE o PUT.
+
+Una vez creadas las funciones para obtener los datos como `getUsers` y `getUsersById`, las vamos a utilizar de la siguiente manera. La constante `userApi` va a tomar las configuraciones de `getUsers` y `getUsersById` y va a crear unos hooks de [React](https://es.react.dev/) que internamente ya lo guardan en el estado.
+
+![Nextjs-Redux](https://i.postimg.cc/dtWmnGYZ/nextjs-redux-12.jpg "Solicitud de datos a un backend")
+
+### Obteniendo los datos del backend
+
+Ahora, vamos a obtener los datos del backend. Para ello, nos dirigimos al componente `HomePage` e importamos los hooks correspondientes a `getUsers` y `getUserById` para mostrar los datos.
+
+![Nextjs-Redux](https://i.postimg.cc/s2yjX6nt/nextjs-redux-13.jpg "Obteniendo los datos del backend")
+
+Luego, nos dirigimos a `store.ts` para añadir `userAPI` al store.
+
+![Nextjs-Redux](https://i.postimg.cc/bNJ3Xqp5/nextjs-redux-14.jpg "Obteniendo los datos del backend")
+
+Finalmente, recargamos la página y vemos como se listan los datos y sigue funcionando el contador también.
+
+![Nextjs-Redux](https://i.postimg.cc/mg7ZTfSY/nextjs-redux-14.jpg "Obteniendo los datos del backend")
 
 
 
