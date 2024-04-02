@@ -1,9 +1,11 @@
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "./store";
+import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./store";
 
-
-// Con useDispatch<AppDispatch>, declaramos que App puede utilizar el counterReducer para caracteristicas
 export const useAppDispatch = () => useDispatch<AppDispatch>();
+// Con <AppDispatch,RootState> indico los posibles tipos de datos que toma
+// la funcion useDispatch. Con esto, useDispatch puede acceder al counterReducer
 
-// Declaramos useAppSelector para obtener un selector del estado o un dato, utilizamos useAppSelector.   
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+
+
